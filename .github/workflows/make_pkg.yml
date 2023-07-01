@@ -7,12 +7,16 @@ jobs:
   build:
 
     env:
-      PROJECT: StereoKit.csproj
+      PROJECT: StereoKit/StereoKit.csproj
       
-    runs-on: ubuntu-20.04
+    runs-on: ubuntu-22.04
 
     steps:
     - uses: actions/checkout@v3
+    - name: apt install
+      run: |
+          sudo apt-get update
+          sudo apt-get install build-essential cmake unzip libfontconfig1-dev libgl1-mesa-dev libvulkan-dev libx11-xcb-dev libxcb-dri2-0-dev libxcb-glx0-dev libxcb-icccm4-dev libxcb-keysyms1-dev libxcb-randr0-dev libxrandr-dev libxxf86vm-dev mesa-common-dev libjsoncpp-dev libxfixes-dev libglew-dev libegl-dev
     - name: Setup .NET
       uses: actions/setup-dotnet@v3
       with:
@@ -21,6 +25,10 @@ jobs:
       uses: xmake-io/github-action-setup-xmake@v1
       with:
         xmake-version: '2.7.5'
+    - name: xmake
+      run: |
+          xmake f -p linux -a x64 --tests=n --linux-graphics-backend=EGL -y
+          xmake
     - name: Restore dependencies
       run: dotnet restore $PROJECT
     - name: Pack
