@@ -20,7 +20,7 @@
 	<!-- NuGet package -->
 	<PropertyGroup>
 		<Id>org.galister.StereoKit-EGL</Id>
-		<Version>0.3.7-preview.9</Version>
+		<Version>0.3.7-preview.9-linux2</Version>
 		<Title>StereoKit-EGL</Title>
 		<Authors>galister</Authors>
 		<PackageProjectUrl>https://github.com/galister/StereoKit</PackageProjectUrl>

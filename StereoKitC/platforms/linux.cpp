@@ -6,7 +6,6 @@
 
 #include <X11/keysym.h>
 #include <X11/XKBlib.h>
-#include <X11/extensions/Xfixes.h>
 
 #include "../xr_backends/openxr.h"
 #include "flatscreen_input.h"
@@ -494,15 +493,8 @@ void linux_set_cursor(vec2 window_pos) {
 	// and https://github.com/blender/blender/blob/a8f7d41d3898a8d3ae8afb4f95ea9f4f44db2a69/intern/ghost/intern/GHOST_SystemX11.cpp#L1680 .
 	// I don't know why this works, but it definitely does - the pointer correctly warps to the right spot as of July 2022.
 
-	if (xwayland){
-		XFixesHideCursor(x_dpy, x_win);
-	}
-
 	XWarpPointer(x_dpy, x_win, x_win, 0, 0, 0, 0, window_pos.x,window_pos.y);
 
-	if (xwayland){
-		XFixesShowCursor(x_dpy, x_win);
-	}
 	XFlush(x_dpy);
 }
 
