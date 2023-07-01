@@ -17,16 +17,16 @@
 
 	<!-- NuGet package -->
 	<PropertyGroup>
-		<Id>StereoKit</Id>
+		<Id>StereoKit-EGL</Id>
 		<Version>0.3.7-preview.9</Version>
-		<Title>StereoKit</Title>
-		<Authors>Nick Klingensmith</Authors>
-		<PackageProjectUrl>https://github.com/maluoi/StereoKit</PackageProjectUrl>
+		<Title>StereoKit-EGL</Title>
+		<Authors>galister</Authors>
+		<PackageProjectUrl>https://github.com/galister/StereoKit</PackageProjectUrl>
 		<PackageIcon>images\StereoKitLogo64.png</PackageIcon>
 		<PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
-		<Description>A lightweight low-dependency C# rendering library for MR / AR / VR / Desktop using OpenXR!</Description>
+		<Description>StereoKit but with GLES-EGL backend on Linux.</Description>
 		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<PackageTags>OpenXR C# AR VR MR XR MixedReality HoloLens</PackageTags>
+		<PackageTags>OpenXR C# AR VR MR XR MixedReality HoloLens EGL</PackageTags>
 		<GeneratePackageOnBuild>false</GeneratePackageOnBuild>
 		<EmbedUntrackedSources>true</EmbedUntrackedSources>
 	</PropertyGroup>
